@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="View_Nhomsanpham" model="ir.ui.view">
+            <field name="name">View_Nhomsanpham</field>
+            <field name="model">tabas.nhomsanpham</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                    <field name="nsp_code"/>
+                    <field name="nsp_description"/>
+                    <field name="nsp_cock"/>
+                    <field name="nsp_summary"/>
+                    <field name="nsp_sp_id"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="tabas_action_nhomsanpham" model="ir.actions.act_window">
+            <field name="name">Nhóm Sản Phẩm</field> <!-- Hiện ở form view -->
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tabas.nhomsanpham</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="nhomsanpham_menu" name="Nhóm sản phẩm"
+                  parent="danhmuc_menu" action="tabas_action_nhomsanpham" web_icon="Tabas,static/description/icon.png" sequence="1"/> <!--Name Hiện ở Header khi kích vào sản phẩm -->
+    </data>
+</odoo>
+
