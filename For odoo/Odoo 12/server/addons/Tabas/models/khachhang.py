@@ -14,8 +14,8 @@ class Khachhang(models.Model):
     kh_tel = fields.Char(string='Đ')
 
     _sql_constraints = [
-        ('check_unique_tel', 'UNIQUE(kh_tel)',
-         'Số điện thoại khách hàng đã tồn tại !'),
-        ('check_unique_code', 'UNIQUE(kh_code)', 'Mã Code khách hàng đã tồn tại !'),
-        ('check_unique_tenkh', 'UNIQUE(name)' or 'UNIQUE(kh_diachi)','Khách hàng đã tồn tại  [Trùng tên và địa chỉ] !'),
+        # ('check_unique_tel', 'UNIQUE(kh_tel)',
+        #  'Số điện thoại khách hàng đã tồn tại !'),
+        # ('check_unique_code', 'UNIQUE(kh_code)', 'Mã Code khách hàng đã tồn tại !'),
+        # ('check_unique_tenkh', 'UNIQUE(name)' or 'UNIQUE(kh_diachi)','Khách hàng đã tồn tại  [Trùng tên và địa chỉ] !'),
     ]
