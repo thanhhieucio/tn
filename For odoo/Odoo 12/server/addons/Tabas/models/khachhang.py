@@ -18,4 +18,5 @@ class Khachhang(models.Model):
         #  'Số điện thoại khách hàng đã tồn tại !'),
         # ('check_unique_code', 'UNIQUE(kh_code)', 'Mã Code khách hàng đã tồn tại !'),
         # ('check_unique_tenkh', 'UNIQUE(name)' or 'UNIQUE(kh_diachi)','Khách hàng đã tồn tại  [Trùng tên và địa chỉ] !'),
+        #====================================================================================================================
     ]
