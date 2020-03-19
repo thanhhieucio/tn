@@ -20,4 +20,5 @@ class Khachhang(models.Model):
         # ('check_unique_tenkh', 'UNIQUE(name)' or 'UNIQUE(kh_diachi)','Khách hàng đã tồn tại  [Trùng tên và địa chỉ] !'),
         #====================================================================================================================
         #Thêm một dòng nữa
+        #thêm dòng nữa xem thế nào commit rồi push lên
     ]
