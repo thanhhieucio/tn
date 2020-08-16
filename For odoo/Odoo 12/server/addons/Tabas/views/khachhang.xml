@@ -5,7 +5,7 @@
            <field name="name">View_Khachhang</field>
            <field name="model">tabas.khachhang</field>
            <field name="arch" type="xml">
-               <tree string="">
+               <tree string="" create="false">
                    <field name="name"/>
                     <field name="kh_code"/>
                     <field name="kh_description"/>
@@ -13,6 +13,7 @@
                     <field name="kh_kv_id"/>
                     <field name="kh_loai"/>
                     <field name="kh_tel"/>
+                    <field name="kh_nx_id" /> <!--options="{'no_create_edit': True}" -->
                </tree>
            </field>
        </record>

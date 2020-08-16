@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_department" model="res.groups">
+<!--            <field name="category_id" ref="base.module_category_human_resources"/>-->
+            <field name="name">Department</field>
+        </record>
+
+        <record id="personal_access_orders" model="ir.rule">
+            <field name="name">Personal access orders</field>
+            <field name="model_id" ref="model_employee" />
+            <field eval="True" name="global"/>
+            <field name="domain_force">[('create_uid','=',[user.id])]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+    </data>
+</odoo>

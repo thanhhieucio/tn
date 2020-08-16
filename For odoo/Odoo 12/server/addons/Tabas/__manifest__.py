@@ -12,12 +12,16 @@
         'base',
     ],
     'data': [
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'views/hieubt_customize.xml',
         'views/sanpham.xml',
         'views/nhomsanpham.xml',
         'views/donvitinh.xml',
         'views/khachhang.xml',
         'views/khuvuc.xml',
-        'views/noidungthuchi.xml'
+        'views/noidungthuchi.xml',
+        'views/nhapxuat.xml',
     ],
     'demo': [],
     'installable': True,

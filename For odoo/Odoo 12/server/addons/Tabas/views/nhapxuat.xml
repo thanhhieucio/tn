@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--<record id="frmNhapxuat" model="ir.ui.view">
+            <field name="name">frmNhapXuat</field>
+            <field name="model">tabas.nhapxuat</field>
+            <field name="arch" type="xml"></field>
+                <form string="Thông Tin Nhập Xuất">
+                    <sheet>
+                        <field name="name"/>
+                        <field name="nx_code"/>
+                        <field name="nx_ngay"/>
+                        <field name="nx_kh_id"/> &lt;!&ndash;readonly="1"widget="res_partner_many2one"&ndash;&gt;
+                        <field name="nx_dc" readonly="1"/>
+                    </sheet>
+                </form>
+        </record>-->
+
+<!--        <record id="View_nhapxuat" model="ir.ui.view ">-->
+<!--            <field name="name">View_nhapxuat</field>-->
+<!--            <field name="model">tabas.nhapxuat</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree string="Nhập Xuất View">-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="nx_code"/>-->
+<!--                    <field name="nx_ngay"/>-->
+<!--                    <field name="nx_kh_id"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="tabas_action_nhapxuat" model="ir.actions.act_window">
+            <field name="name">Nhập Xuất</field> <!-- Hiện ở form view -->
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tabas.nhapxuat</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--menuitem id="nhapxuat_menu" name="2- Nhập Xuất"  parent="tabas_root_menu" action="tabas_action_nhapxuat" sequence="2"/-->
+
+        <menuitem id="nhapxuat_menu" name="1 - Nhập Xuất"
+                  parent="tabas_root_menu" action="tabas_action_nhapxuat"  sequence="1"/> <!--Name Hiện ở Header khi kích vào sản phẩm web_icon="Tabas,static/description/icon.png"-->
+
+    </data>
+</odoo>

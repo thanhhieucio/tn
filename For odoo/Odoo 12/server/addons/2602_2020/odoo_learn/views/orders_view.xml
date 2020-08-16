@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="orders_tree_view" model="ir.ui.view">
+            <field name="name">Orders</field>
+            <field name="model">orders</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="total_price" sum="Total of Total"/>
+<!--                    <field name="description"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="orders_form_view" model="ir.ui.view">
+            <field name="name">Orders</field>
+            <field name="model">orders</field>
+            <field name="arch" type="xml">
+                <form>
+<!--                    <header>-->
+<!--                        <field name="state" widget="statusbar" statusbar_visible="working,closed" nolabel="1" readonly="1" />-->
+<!--                    </header>-->
+                    <sheet>
+                        <group>
+                                <field name="total_price"/>
+                                <field name="employee_ids"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="orders_action" model="ir.actions.act_window">
+            <field name="name">Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">orders</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        <menuitem id="employee_root_menu" name="Employee Management" sequence="1"/>-->
+        <menuitem id="orders_chilren_menu" name="Orders"
+                  parent="employee_root_menu" action="orders_action" sequence="3"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <report id="action_employee_report"
+                string="Employee Report"
+                model="report.employee.xlsx"
+                report_type="xlsx"
+                name="employee.xlsx"
+                file="employee.xlsx"
+                print_report_name="'Employee Report'"
+                />
+
+        <record id="report_employee_form_view" model="ir.ui.view">
+            <field name="name">Employee Form View</field>
+            <field name="model">report.employee.xlsx</field>
+            <field name="arch" type="xml">
+                <form>
+<!--                    <group name="main_group">-->
+<!--                        <group name="group_1">-->
+<!--                            <field name="store_id" options="{'no_open': True, 'no_create': True}"/>-->
+<!--                        </group>-->
+<!--                        <group name="group_2">-->
+<!--                            <field name="date_from"/>-->
+<!--                            <field name="date_to"/>-->
+<!--                        </group>-->
+<!--                    </group>-->
+                    <footer>
+                        <button name="%(action_employee_report)d" string="Print Report"
+                                class="btn-primary" type="action"/>
+                        or
+                        <button string="Cancel" class="btn-link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_employee_report_menu" model="ir.actions.act_window">
+            <field name="name">Employee Report</field>
+            <field name="res_model">report.employee.xlsx</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="employee_report_menu" name="Employee report"
+                  parent="odoo_learn.employee_root_menu" sequence="100" groups="base.group_user"
+                  action="action_employee_report_menu"
+        />
+
+    </data>
+</odoo>

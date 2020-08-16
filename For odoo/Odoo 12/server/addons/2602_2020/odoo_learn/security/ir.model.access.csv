@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_department_department,access.department.department,model_department,group_nhanvien,1,1,1,1
+access_employee_department,access.employee.department,model_employee,group_department,1,0,0,0
+access_order_department,access.order.department,model_orders,group_department,1,1,1,1

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="employee_tree_view" model="ir.ui.view">
+            <field name="name">Employee</field>
+            <field name="model">employee</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="address"/>
+                    <field name="income_date"/>
+                    <field name="create_uid"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="employee_form_view" model="ir.ui.view">
+            <field name="name">Employee</field>
+            <field name="model">employee</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="set_closed" string="Set Closed" type="object" states="working"/>
+                        <button name="set_working" string="Set Working" type="object" states="closed"/>
+                        <field name="state" widget="statusbar" statusbar_visible="working,closed" nolabel="1" readonly="1" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1" context="{'test': 'test'}"/>
+                                <field name="phone" required="1"/>
+
+
+
+                            </group>
+                            <group>
+                                <field name="income_date"/>
+                                <field name="income_year"/>
+
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="order_page" string="Order">
+                                <group>
+                                    <group>
+                                        <field name="department_id"
+                                           domain="[('description', '!=', ''), ('description', '!=', False)]" />
+                                    </group>
+                                    <group>
+                                        <field name="order_ids"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="test" string="Test">
+                                <group>
+                                    <group>
+                                        <field name="address"/>
+                                        <field name="level" />
+                                    </group>
+                                    <group>
+                                        <field name="trial"/>
+                                        <field name="benefit"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="employee_search_view" model="ir.ui.view">
+           <field name="name">Employee Search</field>
+           <field name="model">employee</field>
+            <field name="arch" type="xml">
+                <search string="Employee">
+                    <field name="name" />
+                    <field name="address" />
+                    <field name="benefit" string="Benefit"/>
+                    <filter name="benefit_100" string="Benefit > 100" domain="[('benefit', '&gt;=', 4000000)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Group Income Date" context="{'group_by':'income_date'}"/>
+                    </group>
+                </search>
+           </field>
+        </record>
+
+        <record id="employee_action" model="ir.actions.act_window">
+            <field name="name">Employee</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">employee</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="employee_root_menu" name="Employee Management" sequence="1"/>
+        <menuitem id="employee_chilren_menu" name="Employee"
+                  parent="employee_root_menu" action="employee_action" sequence="1"/>
+
+    </data>
+</odoo>

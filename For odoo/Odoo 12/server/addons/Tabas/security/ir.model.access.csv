@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tabas_Sanpham,access_tabas_Sanpham,model_tabas_sanpham,group_nhanvien,1,1,1,1
+access_tabas_nhomsanpham,access_tabas_nhomsanpham,model_tabas_nhomsanpham,group_nhanvien,1,1,1,1
+access_tabas_donvitinh,access_tabas_donvitinh,model_tabas_donvitinh,group_nhanvien,1,1,1,1
+access_tabas_khachhang,access_tabas_khachhang,model_tabas_khachhang,group_nhanvien,1,1,1,1
+access_tabas_khuvuc,access_tabas_khuvuc,model_tabas_khuvuc,group_nhanvien,1,1,1,1
+access_tabas_noidungthuchi,access_tabas_noidungthuchi,model_tabas_noidungthuchi,group_nhanvien,1,1,1,1
+access_tabas_nhapxuat,access_tabas_nhapxuat,model_tabas_nhapxuat,group_nhanvien,1,1,1,1

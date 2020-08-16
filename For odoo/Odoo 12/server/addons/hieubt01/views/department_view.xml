@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="department_tree" model="ir.ui.view">
+        <field name="name">department</field>
+        <field name="model">hieubt.department</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"  />
+                <field name="address"/>
+                <field name="description"/>
+                <field name="summary"/>
+
+            </tree>
+        </field>
+    </record>
+
+        <record id="department_form" model="ir.ui.view">
+        <field name="name">department</field>
+        <field name="model">hieubt.department</field>
+        <field name="arch" type="xml">
+                <form string="Nhập dữ liệu">
+                    <sheet>
+                        <group>
+                            <group>
+                               <field name="name"  />
+                                <field name="address"/>
+                                <field name="description"/>
+                                <field name="summary"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    <record id="department_action_menu" model="ir.actions.act_window">
+        <field name="name">department</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hieubt.department</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+            <menuitem id="department_categ" name="Employee Department" parent="employee_chilren_menu"
+                      action="department_action_menu" sequence="1"/>
+    </data>
+</odoo>

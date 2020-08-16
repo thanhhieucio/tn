@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="order_report_wizard_form_view" model="ir.ui.view">
+        <field name="name">Order Report</field>
+        <field name="model">order.report.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </group>
+                <footer>
+                    <button name="print_order_report" string="Print Report" type="object"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="order_report_wizard_action" model="ir.actions.act_window">
+        <field name="name">Order Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">order.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="order_report_menu_id" name="Order Report" action="order_report_wizard_action"
+              parent="odoo_learn.employee_root_menu"/>
+</odoo>

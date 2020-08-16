@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="orders_form_view_inherit" model="ir.ui.view">
+            <field name="name">Add Name</field>
+            <field name="model">orders</field>
+            <field name="inherit_id" ref="odoo_learn.orders_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='total_price']" position="before">
+                    <field name="name" readonly="1" force_save="1" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

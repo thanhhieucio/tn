@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Tab Field chỉ hiển thị đúng các trường trong bảng, từ class trong model
+        Và các trường do odoo tự thêm như [create_uid, create_date, write_uid, write_date]
+        -->
+        <!--(Chỉ để hiển thị nội dung bảng)Tạo ra dang table hiển thị các thông tin trong
+        tab tree là các cột trong bảng, nếu ko có mục này odoo chỉ hiển thị ra cột đầu tiên,
+        các bản trước là hiện ra trường id tự sinh-->
+        <record id="employee_tree_vie" model="ir.ui.view">  <!--ID Bắt buộc phải có và khác nhau trong app-->
+            <field name="name">Employee_TreeView</field> <!--Tên tự đặt -->
+            <field name="model">hieubt.employee</field><!--tên file chứa model điền đúng tên,
+                                                phân biệt hoa thường, ko phải tên class trong file .py của model -->
+                <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name" string="Tự đặt tên cột cho máu invisible=1"  />
+                    <field name="phone"/>
+                    <field name="address"/>
+                    <field name="birthday"/>
+                    <field name="age"/>
+                    <field name="trial"/>
+                    <field name="state"/>
+                    <field name="basicpay"/>
+                    <field name="department_id" string="Phòng ban"/>
+                    <field name="email_id"/>
+                </tree>
+                </field>
+        </record>
+        <!--(Chỉ để nhập liệu Inser, Update, Edit) Tạo ra 1 form nhập liệu đến bảng liên quan của model truyền vào-->
+        <record id="Employee_form_View" model="ir.ui.view">
+            <field name="name">Employee_Form</field>
+            <field name="model">hieubt.employee</field><!--Trong tất cả các record mục này điền đúng nội dung-->
+            <field name="arch" type="xml">
+                <form string="Nhập dữ liệu">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="phone"/>
+                                <field name="address"/>
+                                <field name="age"/>
+                                <field name="email_id"/>
+                            </group>
+                            <group>
+                                <field name="birthday"/>
+                                <field name="trial"/>
+                                <field name="state"/> <!--load dữ -->
+                                <field name="basicpay"/>
+                                <field name="department_id" string="Phòng ban"/>
+                            </group>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+       <record id="employee_act" model="ir.actions.act_window">
+           <field name="name">Employee Managerment</field>
+           <field name="type">ir.actions.act_window</field>
+           <field name="res_model">hieubt.employee</field>
+           <field name="view_mode">tree,form</field>
+       </record>
+
+       <menuitem id="employee_root_menu" name="Employee Management"/>
+        <menuitem id="employee_chilren_menu" name="Employee"
+                  parent="employee_root_menu" action="employee_act" sequence="1"/>
+
+    </data>
+</odoo>
