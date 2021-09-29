@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="View_Khachhang" model="ir.ui.view">
+           <field name="name">View_Khachhang</field>
+           <field name="model">tabas.khachhang</field>
+           <field name="arch" type="xml">
+               <tree string="" create="true"> <!--create="true" false  ko create-->
+                   <field name="name"/>
+                    <field name="kh_code"/>
+                    <field name="kh_description"/>
+                    <field name="kh_diachi"/>
+                    <field name="kh_kv_id"/>
+                    <field name="kh_loai"/>
+                    <field name="kh_tel"/>
+                    <field name="kh_nx_id" /> <!--options="{'no_create_edit': True}" -->
+               </tree>
+           </field>
+       </record>
+        <record id="tabas_action_khachhang" model="ir.actions.act_window">
+            <field name="name">Khách Hàng - Nhà Cung Cấp</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tabas.khachhang</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+        <!--
+        <menuitem id="khachhang_chilren_menu" name="Khách hàng/ NCC"
+                  parent="tabas_root_menu" action="" sequence="1"/> Name Hiện ở Header khi kích vào sản phẩm tabas_action_khachhang-->
+        <menuitem id="ds_khachhang_menu" name="1.5 Khách hàng/ NCC"
+                  parent="danhmuc_menu" action="tabas_action_khachhang" sequence="5"/> <!--Name Hiện ở Header khi kích vào sản phẩm tabas_action_khachhang-->
+
+
+    </data>
+</odoo>
+

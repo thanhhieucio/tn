@@ -1,0 +1,23 @@
+1. Thực thi quyền root: sudo su
+2. Đổi mật khẩu root: sudo passwd
+3. Cho phép SSH sử dụng phương thức mật khẩu
+- Sửa file: vi /etc/ssh/sshd_config
+- Sửa Permission root login: no  thành yes
+- Sửa Password authentication : no thành yes
+4. Khởi động lại dịch vụ sshd: service sshd restart
+
+sửa menu khi đăng nhập bên phải
+/usr/lib/python3/dist-packages/odoo/addons/web/static/src/xml/base.xml
+Dòng 1543
+
+list_db=false
+
+Sửa phần powerby lúc đăng nhập  :/usr/lib/python3/dist-packages/odoo/addons/portal/views/portal_templates - 182
+
+Sửa quản lý database và hỗ trợ từ odoo
+Không cho list database sửa trong config
+
+/usr/lib/python3/dist-packages/odoo/addons/web/view/webclient_template.xml
+
+cài them backend_theme_v12 web_responsive
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="View_Noidungthuchi_id" model="ir.ui.view">
+            <field name="name">View_Noidungthuchi</field>
+            <field name="model">tabas.noidungthuchi</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="tabas_action_Noidungthuchi" model="ir.actions.act_window">
+            <field name="name">DS Nội dung thu chi</field> <!-- Hiện ở form view -->
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tabas.noidungthuchi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="Noidungthuchi_menu" name="1.6 Nội dung thu chi"
+                  parent="danhmuc_menu" action="tabas_action_Noidungthuchi" sequence="5"/> <!--Name Hiện ở Header khi kích vào sản phẩm -->
+    </data>
+</odoo>
+

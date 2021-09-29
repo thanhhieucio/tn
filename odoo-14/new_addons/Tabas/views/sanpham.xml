@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="View_sanpham" model="ir.ui.view">
+            <field name="name">View_Sanpham</field>
+            <field name="model">tabas.sanpham</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="sp_ma"/>
+                    <field name="name"/>
+                    <field name="sp_dv_id" widget="many2many_kanban" />
+                    <field name="sp_gianhap"/>
+                    <field name="sp_giaxuat"/>
+                    <field name="sp_giaxuat1"/>
+                    <field name="sp_giaxuat2"/>
+                    <field name="sp_tondinhmuc"/>
+                    <field name="sp_tonthucte"/>
+                    <field name="sp_hinhanh"/>
+                    <field name="sp_store_fname" invisible="1"/>
+                    <field name="sp_hinhanh" filename="store_fname" widget="attachment_image" class="ot_image"/>
+                </tree>
+            </field>
+        </record>
+        <record id="tabas_action_sanpham" model="ir.actions.act_window">
+            <field name="name">Sản Phẩm</field> <!-- Hiện ở form view -->
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tabas.sanpham</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+<!--        <menuitem id="tabas_root_menu" name="Tabas - Quản lý bán hàng"  sequence="1" web_icon=" sale_management/static/description/icon.png"/>
+<menuitem id="students_menu" name="3- Thông Tin Sinh Viên" parent="tabas_root_menu" action="" sequence=""/>
+-->
+        <menuitem id='tabas_root_menu' name='TN-VN'  sequence='1' web_icon='Tabas,static/description/icon.png' />
+        <menuitem id='danhmuc_menu' name='1- Danh mục - Sản Phẩm &amp; Khách Hàng' parent='tabas_root_menu'
+                  action='tabas_action_sanpham' sequence='1'/>
+
+<!--        <menuitem id="students_menu" name="3- Quản lý Sinh Viên" parent="tabas_root_menu"-->
+<!--                  action="action_students"  sequence="3"/>-->
+    </data>
+</odoo>
+

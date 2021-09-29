@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="View_timkiem_id" model="ir.ui.view">
+            <field name="name">View_timkiem</field>
+            <field name="model">tabas.timkiem</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                    <field name="tknd_code"/>
+                    <field name="tkghichu_description"/>
+                </tree>
+            </field>
+        </record>
+      <record id="timkiem_view_form" model="ir.ui.view">
+          <field name="name">timkiem_view_form</field>
+          <field name="model">tabas.timkiem</field>
+          <field name="arch" type="xml">
+              <form string="timkiem_form">
+                  <sheet>
+                      <group>
+                          <field name="tknd_code"/>
+                          <field name="name"/>
+                          <field name="tkghichu_description"/>
+                      </group>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+        <record id="tabas_action_timkiem" model="ir.actions.act_window">
+            <field name="name">DS Nội dung tìm kiếm</field> <!-- Hiện ở form view -->
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tabas.timkiem</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id='seach_menu' name='3- Thông Tin tra cứu'  parent='tabas_root_menu' action="tabas_action_timkiem" sequence="3"/>
+        <menuitem id="timkiem_menu" name="Tra cứu thông tin"
+                  parent="seach_menu" action="tabas_action_timkiem" sequence="1"/> <!--Name Hiện ở Header khi kích vào sản phẩm -->
+    </data>
+</odoo>
+

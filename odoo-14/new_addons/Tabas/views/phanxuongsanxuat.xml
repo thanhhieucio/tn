@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <odoo>
+     <data>
+         <record id="phanxuongsanxuat_view_tree" model="ir.ui.view">
+             <field name="name">phanxuongsanxuat_view_tree</field>
+             <field name="model">tabas.phanxuongsanxuat</field>
+             <field name="arch" type="xml">
+                 <tree string="phanxuongsanxuat_tree">
+                     <field name="name"/>
+                 </tree>
+             </field>
+         </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <record id="phanxuongsanxuat_action" model="ir.actions.act_window">
+            <field name="name">phanxuongsanxuat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tabas.phanxuongsanxuat</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+         <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+
+         <menuitem id="sanxuat_menu" name="2- Danh Mục Sản Xuất" parent="tabas_root_menu" sequence="2"/>
+
+         <!-- This Menu Item must have a parent and an action -->
+         <menuitem id="Menu_phanxuong" name="2.1- Phân xưởng sản xuất" parent="sanxuat_menu" action="phanxuongsanxuat_action" sequence="1"/>
+
+     </data>
+ </odoo>
+

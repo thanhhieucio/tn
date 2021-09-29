@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="View_nhapxuatchitiet_id" model="ir.ui.view">
+            <field name="name">View_nhapxuatchitiet</field>
+            <field name="model">tabas.nhapxuatchitiet</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="nxct_sp_id"/>
+                    <field name="nxct_sl"/>
+                    <field name="nxct_dvt_id"/>
+                    <field name="nxct_sl"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

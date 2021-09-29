@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="View_Khuvuc" model="ir.ui.view">
+            <field name="name">View_Khuvuc</field>
+            <field name="model">tabas.khuvuc</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                    <!--field name="nsp_code"/>
+                    <field name="nsp_description"/>
+                    <field name="nsp_cock"/>
+                    <field name="nsp_summary"/>
+                    <field name="nsp_sanpham_id"/-->
+                </tree>
+            </field>
+        </record>
+        <record id="tabas_action_khuvuc" model="ir.actions.act_window">
+            <field name="name">Khu vực Kh/Ncc</field> <!-- Hiện ở form view -->
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tabas.khuvuc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="khuvuc_menu" name="1.4 Khu vực Kh/Ncc"
+                  parent="danhmuc_menu" action="tabas_action_khuvuc" sequence="4"/> <!--Name Hiện ở Header khi kích vào sản phẩm -->
+    </data>
+</odoo>
+

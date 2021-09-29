@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="nhapxuat_view_tree" model="ir.ui.view">
+            <field name="name">nhapxuat_view_tree</field>
+            <field name="model">tabas.nhapxuat</field>
+            <field name="arch" type="xml">
+                <tree string="nhapxuat_tree">
+                    <field name="name"/>
+                    <field name="nx_code"/>
+                    <field name="nx_kh_id" widget="res_partner_many2one"/>
+                    <field name="nx_dc"/>
+                    <field name="nx_tienhang" />
+                    <field name="nx_tienchietkhau" />
+                    <field name="nx_sauchietkhau" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="nhapxuat_view_form" model="ir.ui.view">
+            <field name="name">nhapxuat_view_form</field>
+            <field name="model">tabas.nhapxuat</field>
+            <field name="arch" type="xml">
+                <form string="nhapxuat_form">
+                    <!--sheet-->
+                        <group>
+                            <field name="id"/>
+                            <field name="name"/>
+                            <field name="nx_code"/>
+                            <field name="nx_ngay"/> <!--widget="res_partner_many2one" options="{&quot;always_reload&quot;: True}-->
+                            <!--field name="nx_kh_id" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}"/-->
+                            <field name="nx_kh_id" widget="One2many" />
+                            <field name="nx_dc"/>
+
+                        </group>
+                        <notebook>
+                            <page string="Danh sách sản phẩm">
+                                <field name="nx_nxct_id">
+                                    <tree editable="bottom">
+                                        <field name="nxct_sp_id"/>
+                                        <field name="nxct_dvt_id"/>
+                                        <field name="nxct_sl"/>
+                                        <field name="nxct_dongia"/>
+                                        <field name="nxct_ck"/>
+                                        <field name="nxct_tienck"/>
+                                        <field name="nxct_thanhtien"  class="oe_subtotal_footer_separator" widget="monetary" />
+
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    <!--/sheet-->
+
+                     <group name="note_group" col="6" class="mt-2 mt-md-0">
+                                <group colspan="4">
+                                   <field name="nx_tienhang" nolabel="1" placeholder="Terms and conditions..."/>
+                                </group>
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+<!--                                    <field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"/>-->
+<!--                                    <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>-->
+                                    <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+<!--                                        <label for="amount_total"/>-->
+                                    </div>
+<!--                                    <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>-->
+                                </group>
+                                <div class="oe_clear"/>
+                     </group>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="tabas_action_nhapxuat" model="ir.actions.act_window">
+            <field name="name">NhapXuat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tabas.nhapxuat</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+          <menuitem id='bills_menu' name='3- Thông Tin Nhập Xuất' parent='tabas_root_menu' action="tabas_action_nhapxuat" sequence="3" />
+    <!-- This Menu Item must have a parent and an action-->
+
+        <menuitem id="Menu_NhapXuat" name="1- Nhập Xuất" parent="bills_menu" action="tabas_action_nhapxuat" sequence="6"/>
+
+    </data>
+</odoo>

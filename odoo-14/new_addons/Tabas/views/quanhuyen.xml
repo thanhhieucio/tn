@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="View_quanhuyen_id" model="ir.ui.view">
+            <field name="name">View_quanhuyen</field>
+            <field name="model">tabas.quanhuyen</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                    <field name="qh_code"/>
+                    <field name="qh_description"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="tabas_action_quanhuyen" model="ir.actions.act_window">
+            <field name="name">Quận Huyện</field> <!-- Hiện ở form view -->
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tabas.quanhuyen</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="quanhuyen_menu" name="1.1 Quận Huyện"  parent="danhmuc_menu" action="tabas_action_quanhuyen" sequence="0"/> <!--Name Hiện ở Header khi kích vào sản phẩm -->
+    </data>
+</odoo>
+

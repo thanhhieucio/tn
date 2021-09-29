@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="View_students" model="ir.ui.view">
+            <field name="name">View_students</field>
+            <field name="model">tabas.students</field>
+            <field name="arch" type="xml">
+                <tree string="" create="false"> <!--create="true" false  ko create-->
+                    <field name="name"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="students_view_form" model="ir.ui.view">
+            <field name="name">students_view_form</field>
+            <field name="model">tabas.students</field>
+            <field name="arch" type="xml">
+                <form string="students_form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_students" model="ir.actions.act_window">
+            <field name="name">Student</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tabas.students</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--            <record id="nhapxuat_action" model="ir.actions.act_window">-->
+<!--            <field name="name">NhapXuat</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">tabas.nhapxuat</field>-->
+<!--            <field name="view_mode">tree,form</field>-->
+<!--        </record>-->
+
+
+        <!-- This Menu Item must have a parent and an action
+
+        <menuitem id="ds_students_menu" name="Hồ Sơ Sinh Viên" parent="students_menu" action="action_students" sequence="1"/>
+-->
+    </data>
+</odoo>
+
