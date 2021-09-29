@@ -1,45 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!--<record id="frmNhapxuat" model="ir.ui.view">
-            <field name="name">frmNhapXuat</field>
+
+        <record id="nhapxuat_view_tree" model="ir.ui.view">
+            <field name="name">nhapxuat_view_tree</field>
             <field name="model">tabas.nhapxuat</field>
-            <field name="arch" type="xml"></field>
-                <form string="Thông Tin Nhập Xuất">
+            <field name="arch" type="xml">
+                <tree string="nhapxuat_tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="nhapxuat_view_form" model="ir.ui.view">
+            <field name="name">nhapxuat_view_form</field>
+            <field name="model">tabas.nhapxuat</field>
+            <field name="arch" type="xml">
+                <form string="nhapxuat_form">
                     <sheet>
-                        <field name="name"/>
-                        <field name="nx_code"/>
-                        <field name="nx_ngay"/>
-                        <field name="nx_kh_id"/> &lt;!&ndash;readonly="1"widget="res_partner_many2one"&ndash;&gt;
-                        <field name="nx_dc" readonly="1"/>
+                        <group>
+                            <field name="name"/>
+
+                        </group>
                     </sheet>
                 </form>
-        </record>-->
-
-<!--        <record id="View_nhapxuat" model="ir.ui.view ">-->
-<!--            <field name="name">View_nhapxuat</field>-->
-<!--            <field name="model">tabas.nhapxuat</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <tree string="Nhập Xuất View">-->
-<!--                    <field name="name"/>-->
-<!--                    <field name="nx_code"/>-->
-<!--                    <field name="nx_ngay"/>-->
-<!--                    <field name="nx_kh_id"/>-->
-<!--                </tree>-->
-<!--            </field>-->
-<!--        </record>-->
+            </field>
+        </record>
 
         <record id="tabas_action_nhapxuat" model="ir.actions.act_window">
-            <field name="name">Nhập Xuất</field> <!-- Hiện ở form view -->
+            <field name="name">NhapXuat</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">tabas.nhapxuat</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <!--menuitem id="nhapxuat_menu" name="2- Nhập Xuất"  parent="tabas_root_menu" action="tabas_action_nhapxuat" sequence="2"/-->
+          <menuitem id='bills_menu' name='2- Thông Tin Nhập Xuất' parent='tabas_root_menu' action="tabas_action_nhapxuat" sequence="2"/>
+    <!-- This Menu Item must have a parent and an action-->
 
-        <menuitem id="nhapxuat_menu" name="1 - Nhập Xuất"
-                  parent="tabas_root_menu" action="tabas_action_nhapxuat"  sequence="1"/> <!--Name Hiện ở Header khi kích vào sản phẩm web_icon="Tabas,static/description/icon.png"-->
+        <menuitem id="Menu_NhapXuat" name="1- Nhập Xuất" parent="bills_menu" action="tabas_action_nhapxuat" sequence="6"/>
 
     </data>
 </odoo>

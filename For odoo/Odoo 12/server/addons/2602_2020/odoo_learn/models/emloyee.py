@@ -53,7 +53,7 @@ class Employee(models.Model):
             else:
                 employee.benefit = 10000000
 
-    @api.multi
+    #@api.multi
     def set_closed(self):
         self.ensure_one()
         # ls_order = self.order_ids
@@ -76,14 +76,14 @@ class Employee(models.Model):
         for emp in self:
             emp.state = 'closed'
 
-    @api.multi
+    #@api.multi
     def set_working(self):
         print(self.env.context)
         # self.write({'state': 'working'})
         # for emp in self:
         #     emp.state = 'working'
 
-    @api.multi
+    #@api.multi
     def write(self, vals):
         name = vals.get('name', False)
         # if name:
@@ -93,7 +93,7 @@ class Employee(models.Model):
         #     emp.with_context({'from': 'write'}).set_working()
         return result
 
-    @api.multi
+    #@api.multi
     def unlink(self):
         return super(Employee, self).unlink()
 

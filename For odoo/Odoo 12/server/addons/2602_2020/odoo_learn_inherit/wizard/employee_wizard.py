@@ -7,7 +7,7 @@ class EmployeeWizard(models.TransientModel):
 
     income_year = fields.Integer(string='Income Year')
 
-    @api.multi
+    #@api.multi
     def calc_benefit(self):
         if self.income_year > 0:
             employee_id = self.env.context.get('active_id', False)

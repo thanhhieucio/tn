@@ -28,7 +28,7 @@ class Employee(models.Model):
 
 
 
-    @api.multi
+    #@api.multi
     # @api.depends('birthday')
     # def Test(self):
     #     self.ensure_one()

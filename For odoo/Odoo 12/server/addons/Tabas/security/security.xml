@@ -5,6 +5,14 @@
             <!--field name="category_name_vietnhat" ref="base.module_category_human_resources"/-->
             <field name="name">Nhân viên VN</field>
         </record>
+
+
+
+
+
+
+
+
 <!--Phần quyền theo từng bản ghi của người dùng-->
 <!--        <record id="personal_access_orders" model="ir.rule">-->
 <!--            <field name="name">Personal access orders</field>-->

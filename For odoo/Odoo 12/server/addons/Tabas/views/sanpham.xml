@@ -27,13 +27,15 @@
             <field name="res_model">tabas.sanpham</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <!--menuitem id="tabas_root_menu" name="Tabas - Quản lý bán hàng"  sequence="1" Name Hiện ở phần trên cùng   sale_management/static/description/icon.png-->
-        <menuitem id="tabas_root_menu" name="TN-VN"  sequence="1" web_icon="Tabas,static/description/icon.png" /> <!--Name Hiện ở phần trên cùng -->
-        <menuitem id="danhmuc_menu" name="1- Danh mục"  parent="tabas_root_menu" action="tabas_action_sanpham" sequence="1"/> <!--Name Hiện ở Header khi kích vào sản phẩm -->
-        <!--menuitem id="nhapxuat_menu" name="2- Nhập Xuất"  parent="tabas_root_menu" action="tabas_action_nhapxuat" sequence="2"/-->
-        <!--menuitem id="baocao_menu" name="3- Báo cáo" parent="tabas_root_menu" action="tabas_action_nhapxuat" sequence="3"/-->
+<!--        <menuitem id="tabas_root_menu" name="Tabas - Quản lý bán hàng"  sequence="1" web_icon=" sale_management/static/description/icon.png"/>
+<menuitem id="students_menu" name="3- Thông Tin Sinh Viên" parent="tabas_root_menu" action="" sequence=""/>
+-->
+        <menuitem id='tabas_root_menu' name='TN-VN'  sequence='1' web_icon='Tabas,static/description/icon.png' />
+        <menuitem id='danhmuc_menu' name='1- Danh mục' parent='tabas_root_menu'
+                  action='tabas_action_sanpham' sequence='1'/>
 
-
+<!--        <menuitem id="students_menu" name="3- Quản lý Sinh Viên" parent="tabas_root_menu"-->
+<!--                  action="action_students"  sequence="3"/>-->
     </data>
 </odoo>
 

@@ -23,7 +23,7 @@ class Orders(models.Model):
     # def set_to_paid(self):
     #     self.state = 'paid'
 
-    # @api.multi
+    # #@api.multi
     # def set_to_paid(self):
     #     for order in self:
     #         order.state = 'paid'

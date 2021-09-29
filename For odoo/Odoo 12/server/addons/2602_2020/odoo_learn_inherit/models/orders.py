@@ -13,6 +13,6 @@ class Orders(models.Model):
         # 2 / 0
         return super(Orders, self).create(vals)
 
-    @api.multi
+    #@api.multi
     def format_employee_name(self, name):
         return name.title()

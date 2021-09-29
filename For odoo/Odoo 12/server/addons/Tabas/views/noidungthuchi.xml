@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="View_Noidungthuchi" model="ir.ui.view">
+        <record id="View_Noidungthuchi_id" model="ir.ui.view">
             <field name="name">View_Noidungthuchi</field>
             <field name="model">tabas.noidungthuchi</field>
             <field name="arch" type="xml">
                 <tree string="">
                     <field name="name"/>
-
                 </tree>
             </field>
         </record>

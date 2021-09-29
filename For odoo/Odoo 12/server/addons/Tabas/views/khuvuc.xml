@@ -12,7 +12,6 @@
                     <field name="nsp_cock"/>
                     <field name="nsp_summary"/>
                     <field name="nsp_sanpham_id"/-->
-
                 </tree>
             </field>
         </record>

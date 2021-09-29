@@ -20,7 +20,7 @@ class Employee(models.Model):
     def create(self, vals):
         return super(Employee, self).create(vals)
 
-    @api.multi
+    #@api.multi
     def set_working(self):
         super(Employee, self).set_working()
         print('continue of set working function')
